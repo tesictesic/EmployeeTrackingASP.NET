@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "G/RA0qyXPKAmQb5V6UPhOk2SvXjxkn2zCpSOnZ84Uz+4iAmVy12mVrcDU4D/lv2c/b26KQWn7QxUFEAdeOkNFw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Djordje\\Desktop\\EmployeeTrackingC#\\EmployeeTrackingC#\\EmployeeTrackingC#.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Djordje\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\Djordje\\.nuget\\packages\\system.drawing.common\\8.0.7\\system.drawing.common.8.0.7.nupkg.sha512",
+    "C:\\Users\\Djordje\\.nuget\\packages\\x.pagedlist\\10.0.3\\x.pagedlist.10.0.3.nupkg.sha512",
+    "C:\\Users\\Djordje\\.nuget\\packages\\x.web.pagedlist\\10.1.2\\x.web.pagedlist.10.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

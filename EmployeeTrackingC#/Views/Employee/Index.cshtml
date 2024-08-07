@@ -1,0 +1,75 @@
+﻿@using X.PagedList
+@using X.PagedList.Extensions
+@using X.Web.PagedList
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Employee";
+}
+@model X.PagedList.IPagedList<EmployeeTable>
+
+<form method="get" action="@Url.Action("Index","Employee")">
+        <label>Keyword:</label>
+    <input type="text" id="keyword" name="keyword" value="@ViewContext.HttpContext.Request.Query["keyword"]" />
+    
+    <br/>
+    <label for="orderBy">Total work days sorting</label>
+    <select id="orderBy" name="orderBy" @ViewContext.HttpContext.Request.Query["orderBy"]>
+        <option value="0">Choose</option>
+        <option value="ASC"> ASC</option>
+        <option value="DESC"> DESC</option>
+    </select>
+    <br/>
+    <input type="submit" value="Search" />
+    </form>
+
+    <style>
+        .red{
+            background-color:red;
+        }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination a {
+            margin: 0 5px;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+            .pagination a.selected {
+                background-color: #007bff;
+                color: white;
+            }
+    </style>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Total Worked</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var employee in Model)
+        { 
+                <tr class="@(employee.TotalDaysWorked<100?"red":"")" >
+                    <th>@employee.Id</th>
+                    <td>@employee.EmployeeName</td>
+                <td>@employee.TotalDaysWorked</td>
+                </tr>
+            
+        }
+        </tbody>
+</table>
+<div class="pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, keyword = @ViewContext.HttpContext.Request.Query["keyword"], orderBy = @ViewContext.HttpContext.Request.Query["orderBy"] }))
+</div>
+      
+
